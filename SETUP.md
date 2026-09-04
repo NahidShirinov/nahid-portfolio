@@ -6,20 +6,21 @@ Engineer profile.
 
 ## Run it locally
 
-You need **Node 18+** and **Yarn** (this machine currently has neither installed).
+You need **Node 18+** (ships with `npm`). The scripts were converted from Yarn to
+plain npm, so no extra package manager is needed.
 
 ```bash
-# install Node with nvm, then:
-corepack enable            # provides yarn
-yarn install
-yarn dev                   # http://localhost:3000
+npm install
+npm run dev        # http://localhost:3000
 ```
 
 Production build / preview:
 
 ```bash
-yarn build && yarn start
+npm run build && npm start
 ```
+
+Optional: `npm run typecheck` (TypeScript), `npm run lint` (ESLint).
 
 ## What was customized
 
