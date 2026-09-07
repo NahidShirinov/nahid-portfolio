@@ -35,3 +35,8 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# next-sitemap output (regenerated on every build)
+/public/sitemap.xml
+/public/sitemap-*.xml
+/public/robots.txt

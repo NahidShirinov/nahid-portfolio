@@ -1,6 +1,6 @@
 /* eslint-env node */
 module.exports = {
-  siteUrl: 'https://nahid-islam.vercel.app',
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://nahid-portfolio.vercel.app',
   exclude: ['/404*', '/500*'],
   transform: async (config, path) => {
     return {
