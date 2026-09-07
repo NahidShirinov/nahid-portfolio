@@ -1,4 +1,3 @@
-import {StaticImageData} from 'next/image';
 import {FC, ForwardRefExoticComponent, SVGProps} from 'react';
 
 import {IconProps} from '../components/Icon/Icon';
@@ -71,16 +70,6 @@ export interface Skill {
 export interface SkillGroup {
   name: string;
   skills: Skill[];
-}
-
-/**
- * Portfolio section
- */
-export interface PortfolioItem {
-  title: string;
-  description: string;
-  url: string;
-  image: string | StaticImageData;
 }
 
 /**

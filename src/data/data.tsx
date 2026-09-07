@@ -15,24 +15,8 @@ import LinkedInIcon from '../components/Icon/LinkedInIcon';
 import StackOverflowIcon from '../components/Icon/StackOverflowIcon';
 import TwitterIcon from '../components/Icon/TwitterIcon';
 import heroImage from '../images/header-background.webp';
-import porfolioImage1 from '../images/portfolio/portfolio-1.jpg';
-import porfolioImage2 from '../images/portfolio/portfolio-2.jpg';
-import porfolioImage3 from '../images/portfolio/portfolio-3.jpg';
-import porfolioImage4 from '../images/portfolio/portfolio-4.jpg';
-import porfolioImage5 from '../images/portfolio/portfolio-5.jpg';
-import porfolioImage6 from '../images/portfolio/portfolio-6.jpg';
 import profilepic from '../images/profilepic.jpg';
-import {
-  About,
-  ContactSection,
-  ContactType,
-  Hero,
-  HomepageMeta,
-  PortfolioItem,
-  SkillGroup,
-  Social,
-  TimelineItem,
-} from './dataDef';
+import {About, ContactSection, ContactType, Hero, HomepageMeta, SkillGroup, Social, TimelineItem} from './dataDef';
 
 /**
  * Page meta data
@@ -49,10 +33,8 @@ export const SectionId = {
   Hero: 'hero',
   About: 'about',
   Contact: 'contact',
-  Portfolio: 'portfolio',
   Resume: 'resume',
   Skills: 'skills',
-  Stats: 'stats',
 } as const;
 
 export type SectionId = (typeof SectionId)[keyof typeof SectionId];
@@ -152,54 +134,6 @@ export const skills: SkillGroup[] = [
       {name: 'BDD / Cucumber', level: 7},
       {name: 'Docker', level: 6},
     ],
-  },
-];
-
-/**
- * Portfolio section
- */
-export const portfolioItems: PortfolioItem[] = [
-  {
-    title: 'End-to-end automation framework',
-    description:
-      'Playwright + TypeScript framework with the Page Object Model, parallel execution, and Allure reporting. Cut regression time from 2 days of manual testing to a 25-minute pipeline run.',
-    url: 'https://github.com/nahid-islam',
-    image: porfolioImage1,
-  },
-  {
-    title: 'API test suite & contract tests',
-    description:
-      'REST Assured + JUnit 5 suite covering 120+ endpoints, plus Pact consumer-driven contract tests that block breaking changes at PR time.',
-    url: 'https://github.com/nahid-islam',
-    image: porfolioImage2,
-  },
-  {
-    title: 'CI/CD quality gates',
-    description:
-      'GitHub Actions workflow running smoke, regression, accessibility (axe) and Lighthouse checks on every merge, with results posted back to the PR.',
-    url: 'https://github.com/nahid-islam',
-    image: porfolioImage3,
-  },
-  {
-    title: 'Performance test project',
-    description:
-      'JMeter and k6 load tests modelling peak checkout traffic; identified an N+1 query and a connection-pool limit that were causing 5xx spikes under load.',
-    url: 'https://github.com/nahid-islam',
-    image: porfolioImage4,
-  },
-  {
-    title: 'Mobile regression with Appium',
-    description:
-      'Cross-platform Appium suite for a React Native app running on BrowserStack against a matrix of Android and iOS devices.',
-    url: 'https://github.com/nahid-islam',
-    image: porfolioImage5,
-  },
-  {
-    title: 'Test strategy & writing',
-    description:
-      'Articles on risk-based test planning, flaky-test triage, and building a test pyramid that a small team can actually maintain.',
-    url: 'https://github.com/nahid-islam',
-    image: porfolioImage6,
   },
 ];
 
