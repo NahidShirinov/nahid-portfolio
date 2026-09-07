@@ -1,11 +1,12 @@
 {
-  "name": "react-resume-template",
-  "short_name": "react-resume-template",
+  "name": "Nahid Islam — QA Engineer",
+  "short_name": "Nahid Islam",
   "icons": [
     {"src": "/icon-192.png", "type": "image/png", "sizes": "192x192"},
-    {"src": "/icon-512.png", "type": "image/png", "sizes": "512x512"}
+    {"src": "/icon-512.png", "type": "image/png", "sizes": "512x512"},
+    {"src": "/icon.svg", "type": "image/svg+xml", "sizes": "any"}
   ],
-  "theme_color": "#515455",
-  "background_color": "#515455",
+  "theme_color": "#12100e",
+  "background_color": "#12100e",
   "display": "standalone"
 }
