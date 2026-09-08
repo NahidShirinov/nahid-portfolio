@@ -5,9 +5,9 @@ Personal portfolio site for a QA Engineer — test automation, API testing, and 
 **Live:** https://nahid-portfolio.vercel.app <!-- update after deploy -->
 
 Built with **Next.js 14** (Pages Router), **TypeScript**, and **Tailwind CSS**.
-Based on [tbakerx/react-resume-template](https://github.com/tbakerx/react-resume-template),
-with the Yarn toolchain swapped for plain npm and the portfolio/testimonials
-sections removed.
+Originally scaffolded from [tbakerx/react-resume-template](https://github.com/tbakerx/react-resume-template);
+now a **vCard-style two-column layout** — a fixed left sidebar (photo, bio, contacts,
+socials) beside a tabbed content card (About / Resume / Contact). Icons are plain emoji.
 
 ## Develop
 
@@ -28,9 +28,10 @@ npm run dev        # http://localhost:3000
 
 ## Edit content
 
-Everything shown on the site is in **`src/data/data.tsx`** — hero, about, skills,
-work experience, education, contact and social links. Section components live in
-`src/components/Sections/`.
+Everything shown on the site is in **`src/data/data.tsx`** — profile/bio, "what I'm
+doing" services, "at a glance" facts, skills, experience, education, contact and
+social links. Layout components: `src/components/Sidebar.tsx`, `Navbar.tsx`, and
+`src/components/tabs/{About,Resume,Contact}Tab.tsx`.
 
 Images are in `src/images/` (imported in `data.tsx`); static files (icons, OG
 image, resume PDF) are in `public/`.
