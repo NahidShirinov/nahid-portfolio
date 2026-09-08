@@ -1,102 +1,90 @@
-import {
-  AcademicCapIcon,
-  ArrowDownTrayIcon,
-  BugAntIcon,
-  BuildingOffice2Icon,
-  CalendarIcon,
-  FlagIcon,
-  MapIcon,
-  SparklesIcon,
-} from '@heroicons/react/24/outline';
-
-import GithubIcon from '../components/Icon/GithubIcon';
-import InstagramIcon from '../components/Icon/InstagramIcon';
-import LinkedInIcon from '../components/Icon/LinkedInIcon';
-import StackOverflowIcon from '../components/Icon/StackOverflowIcon';
-import TwitterIcon from '../components/Icon/TwitterIcon';
-import heroImage from '../images/header-background.webp';
 import profilepic from '../images/profilepic.jpg';
-import {About, ContactSection, ContactType, Hero, HomepageMeta, SkillGroup, Social, TimelineItem} from './dataDef';
+import {
+  AboutItem,
+  ContactSection,
+  HomepageMeta,
+  Profile,
+  Service,
+  SkillGroup,
+  Social,
+  TimelineItem,
+} from './dataDef';
 
 /**
  * Page meta data
  */
 export const homePageMeta: HomepageMeta = {
   title: 'Nahid Islam | QA Engineer',
-  description: 'Portfolio of Nahid Islam, a mid-level QA Engineer specializing in test automation, API testing, and CI/CD quality gates.',
+  description:
+    'Portfolio of Nahid Islam, a mid-level QA Engineer specializing in test automation, API testing, and CI/CD quality gates.',
 };
 
 /**
- * Section definition
+ * Sidebar identity + detailed bio
  */
-export const SectionId = {
-  Hero: 'hero',
-  About: 'about',
-  Contact: 'contact',
-  Resume: 'resume',
-  Skills: 'skills',
-} as const;
-
-export type SectionId = (typeof SectionId)[keyof typeof SectionId];
-
-/**
- * Hero section
- */
-export const heroData: Hero = {
-  imageSrc: heroImage,
-  name: `I'm Nahid Islam.`,
-  description: (
-    <>
-      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I'm a Dhaka based <strong className="text-stone-100">QA Engineer</strong> with 4+ years of experience, currently
-        owning quality for a <strong className="text-stone-100">B2B SaaS platform</strong> — building automated
-        regression suites, API test coverage, and CI/CD quality gates that let teams ship daily with confidence.
-      </p>
-      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I care about <strong className="text-stone-100">shifting testing left</strong>, catching bugs before they reach
-        staging, and making test results something the whole team actually trusts. Outside work you'll find me
-        mentoring junior testers, writing about test strategy, and hiking.
-      </p>
-    </>
-  ),
-  actions: [
-    {
-      href: '/assets/resume.pdf',
-      text: 'Resume',
-      primary: true,
-      Icon: ArrowDownTrayIcon,
-    },
-    {
-      href: `#${SectionId.Contact}`,
-      text: 'Contact',
-      primary: false,
-    },
+export const profile: Profile = {
+  name: 'Nahid Islam',
+  title: 'QA Engineer',
+  avatarSrc: profilepic,
+  resumeUrl: '/assets/resume.pdf',
+  paragraphs: [
+    `I'm a Dhaka-based QA Engineer with 4+ years of experience. I blend hands-on exploratory
+     testing with solid automation engineering, and I currently own quality for a B2B SaaS
+     platform — building automated regression suites, API coverage, and CI/CD quality gates
+     that let teams ship daily with confidence.`,
+    `I've built and maintained frameworks in Playwright, Selenium and Cypress, driven API and
+     contract testing with Postman and REST Assured, and wired suites into Jenkins and GitHub
+     Actions so quality feedback arrives in minutes, not days.`,
+    `I'm ISTQB certified, comfortable reading application code, and I enjoy the parts of the job
+     that are about people: clarifying requirements, running bug bashes, and coaching developers
+     on testable design.`,
   ],
 };
 
 /**
- * About section
+ * "At a glance" facts (About tab)
  */
-export const aboutData: About = {
-  profileImageSrc: profilepic,
-  description: `I'm a mid-level QA Engineer who blends hands-on exploratory testing with solid automation engineering.
-  I've built and maintained test frameworks in Playwright, Selenium and Cypress, driven API and contract testing
-  with Postman and REST Assured, and wired test suites into Jenkins and GitHub Actions so quality feedback arrives
-  in minutes, not days. I'm ISTQB certified, comfortable reading application code, and I enjoy the parts of the job
-  that are about people: clarifying requirements, running bug bashes, and coaching developers on testable design.`,
-  aboutItems: [
-    {label: 'Location', text: 'Dhaka, Bangladesh', Icon: MapIcon},
-    {label: 'Experience', text: '4+ years in QA', Icon: CalendarIcon},
-    {label: 'Focus', text: 'Automation, API & CI/CD quality', Icon: BugAntIcon},
-    {label: 'Interests', text: 'Test strategy, mentoring, hiking', Icon: SparklesIcon},
-    {label: 'Study', text: 'BSc in Computer Science', Icon: AcademicCapIcon},
-    {label: 'Certification', text: 'ISTQB CTFL', Icon: FlagIcon},
-    {label: 'Employment', text: 'Available for new roles', Icon: BuildingOffice2Icon},
-  ],
-};
+export const aboutItems: AboutItem[] = [
+  {emoji: '📍', label: 'Location', text: 'Dhaka, Bangladesh'},
+  {emoji: '🗓️', label: 'Experience', text: '4+ years in QA'},
+  {emoji: '🎯', label: 'Focus', text: 'Automation, API & CI/CD quality'},
+  {emoji: '🎓', label: 'Study', text: 'BSc in Computer Science'},
+  {emoji: '📜', label: 'Certification', text: 'ISTQB — Foundation Level'},
+  {emoji: '✅', label: 'Status', text: 'Available for new roles'},
+];
 
 /**
- * Skills section
+ * "What I'm doing" service cards (About tab)
+ */
+export const whatIDo: Service[] = [
+  {
+    emoji: '🤖',
+    title: 'Test automation',
+    description:
+      'End-to-end and UI automation frameworks in Playwright, Selenium and Cypress — Page Object Model, parallel runs, and readable reports.',
+  },
+  {
+    emoji: '🔌',
+    title: 'API & contract testing',
+    description:
+      'REST and GraphQL coverage with Postman, Newman and REST Assured, plus consumer-driven contract tests that catch breaking changes at PR time.',
+  },
+  {
+    emoji: '⚡',
+    title: 'Performance testing',
+    description:
+      'Load and stress tests with JMeter and k6 — modelling real traffic, finding bottlenecks, and turning results into actionable tickets.',
+  },
+  {
+    emoji: '🚦',
+    title: 'CI/CD quality gates',
+    description:
+      'Wiring test suites into Jenkins and GitHub Actions with smoke, regression, accessibility and flaky-test quarantine, results posted back to the PR.',
+  },
+];
+
+/**
+ * Skills
  */
 export const skills: SkillGroup[] = [
   {
@@ -138,111 +126,73 @@ export const skills: SkillGroup[] = [
 ];
 
 /**
- * Resume section -- TODO: Standardize resume contact format or offer MDX
+ * Resume — education
  */
 export const education: TimelineItem[] = [
   {
     date: 'July 2020',
     location: 'ISTQB',
     title: 'Certified Tester, Foundation Level (CTFL)',
-    content: (
-      <p>
-        Formal grounding in test design techniques, test management, and the fundamentals of the testing process —
-        the vocabulary I use every day when writing test plans and reporting risk to stakeholders.
-      </p>
-    ),
+    content:
+      'Formal grounding in test design techniques, test management, and the fundamentals of the testing process — the vocabulary I use every day when writing test plans and reporting risk to stakeholders.',
   },
   {
-    date: '2015 - 2019',
+    date: '2015 – 2019',
     location: 'University',
     title: 'BSc in Computer Science',
-    content: (
-      <p>
-        Studied software engineering, databases, and algorithms. Final-year project was an automated test harness for
-        a student-records web app, which is what pulled me toward QA in the first place.
-      </p>
-    ),
-  },
-];
-
-export const experience: TimelineItem[] = [
-  {
-    date: 'March 2023 - Present',
-    location: 'SaaS Product Company',
-    title: 'QA Engineer',
-    content: (
-      <p>
-        Own quality for two squads on a B2B SaaS platform. Built the Playwright regression framework from scratch and
-        integrated it into CI, taking release regression from ~2 manual days to a 25-minute automated run. Introduced
-        API and contract testing, set up flaky-test quarantine, and run release readiness reviews. Mentor two junior
-        testers and pair with developers on testability during design.
-      </p>
-    ),
-  },
-  {
-    date: 'January 2021 - March 2023',
-    location: 'Digital Agency',
-    title: 'QA Analyst',
-    content: (
-      <p>
-        Tested client web and mobile projects across the full cycle — requirement reviews, test case design in
-        TestRail, exploratory and cross-browser testing, and regression. Started automating the most repetitive
-        smoke checks in Cypress and wrote SQL queries to validate data-heavy reports.
-      </p>
-    ),
-  },
-  {
-    date: 'June 2020 - January 2021',
-    location: 'Startup',
-    title: 'Junior QA Engineer',
-    content: (
-      <p>
-        First QA hire on a small team. Set up the bug-tracking workflow in Jira, wrote the first structured test
-        cases, and did manual functional and regression testing for a fintech mobile app.
-      </p>
-    ),
+    content:
+      'Studied software engineering, databases, and algorithms. Final-year project was an automated test harness for a student-records web app, which is what pulled me toward QA in the first place.',
   },
 ];
 
 /**
- * Contact section
+ * Resume — experience
  */
+export const experience: TimelineItem[] = [
+  {
+    date: 'March 2023 – Present',
+    location: 'SaaS Product Company',
+    title: 'QA Engineer',
+    content:
+      'Own quality for two squads on a B2B SaaS platform. Built the Playwright regression framework from scratch and integrated it into CI, taking release regression from ~2 manual days to a 25-minute automated run. Introduced API and contract testing, set up flaky-test quarantine, and run release-readiness reviews. Mentor two junior testers and pair with developers on testability during design.',
+  },
+  {
+    date: 'January 2021 – March 2023',
+    location: 'Digital Agency',
+    title: 'QA Analyst',
+    content:
+      'Tested client web and mobile projects across the full cycle — requirement reviews, test case design in TestRail, exploratory and cross-browser testing, and regression. Started automating the most repetitive smoke checks in Cypress and wrote SQL queries to validate data-heavy reports.',
+  },
+  {
+    date: 'June 2020 – January 2021',
+    location: 'Fintech Startup',
+    title: 'Junior QA Engineer',
+    content:
+      'First QA hire on a small team. Set up the bug-tracking workflow in Jira, wrote the first structured test cases, and did manual functional and regression testing for a fintech mobile app.',
+  },
+];
 
+/**
+ * Contact
+ */
 export const contact: ContactSection = {
-  headerText: 'Get in touch.',
+  headerText: 'Get in touch',
   description:
     'Open to mid and senior QA roles, and happy to talk test strategy or automation. Email is the fastest way to reach me.',
   items: [
-    {
-      type: ContactType.Email,
-      text: 'nahid.islam.qa@example.com',
-      href: 'mailto:nahid.islam.qa@example.com',
-    },
-    {
-      type: ContactType.Location,
-      text: 'Dhaka, Bangladesh',
-      href: 'https://www.google.com/maps/place/Dhaka',
-    },
-    {
-      type: ContactType.LinkedIn,
-      text: 'nahid-islam',
-      href: 'https://www.linkedin.com/in/nahid-islam/',
-    },
-    {
-      type: ContactType.Github,
-      text: 'nahid-islam',
-      href: 'https://github.com/nahid-islam',
-    },
+    {emoji: '📧', label: 'Email', text: 'nahid.islam.qa@example.com', href: 'mailto:nahid.islam.qa@example.com'},
+    {emoji: '📍', label: 'Location', text: 'Dhaka, Bangladesh', href: 'https://www.google.com/maps/place/Dhaka'},
+    {emoji: '💼', label: 'LinkedIn', text: '/in/nahid-islam', href: 'https://www.linkedin.com/in/nahid-islam/'},
+    {emoji: '🐙', label: 'GitHub', text: '@nahid-islam', href: 'https://github.com/nahid-islam'},
   ],
 };
 
 /**
- * Social items
+ * Social links
  */
 export const socialLinks: Social[] = [
-  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/nahid-islam'},
-  {label: 'Stack Overflow', Icon: StackOverflowIcon, href: 'https://stackoverflow.com/users/'},
-  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/nahid-islam/'},
-  {label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/'},
-  {label: 'Twitter', Icon: TwitterIcon, href: 'https://twitter.com/'},
+  {label: 'GitHub', emoji: '🐙', href: 'https://github.com/nahid-islam'},
+  {label: 'LinkedIn', emoji: '💼', href: 'https://www.linkedin.com/in/nahid-islam/'},
+  {label: 'Stack Overflow', emoji: '📚', href: 'https://stackoverflow.com/users/'},
+  {label: 'Email', emoji: '📧', href: 'mailto:nahid.islam.qa@example.com'},
 ];

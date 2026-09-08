@@ -1,66 +1,45 @@
-import {FC, ForwardRefExoticComponent, SVGProps} from 'react';
-
-import {IconProps} from '../components/Icon/Icon';
+import {StaticImageData} from 'next/image';
 
 export interface HomepageMeta {
   title: string;
   description: string;
   ogImageUrl?: string;
-  twitterCardType?: 'summary' | 'summary_large';
-  twitterTitle?: string;
-  twitterSite?: string;
-  twitterCreator?: string;
-  twitterDomain?: string;
-  twitterUrl?: string;
-  twitterDescription?: string;
-  twitterImageUrl?: string;
 }
 
 /**
- * Hero section
+ * Sidebar identity + bio
  */
-export interface Hero {
-  imageSrc: string;
+export interface Profile {
   name: string;
-  description: JSX.Element;
-  actions: HeroActionItem[];
-}
-
-interface HeroActionItem {
-  href: string;
-  text: string;
-  primary?: boolean;
-  Icon?: ForwardRefExoticComponent<Omit<SVGProps<SVGSVGElement>, 'ref'>>;
+  title: string;
+  avatarSrc: string | StaticImageData;
+  /** One paragraph per entry. Rendered in order in the sidebar. */
+  paragraphs: string[];
+  /** Optional link to a downloadable CV (served from /public). */
+  resumeUrl?: string;
 }
 
 /**
- * About section
+ * "At a glance" facts shown on the About tab
  */
-export interface About {
-  profileImageSrc?: string;
-  description: string;
-  aboutItems: AboutItem[];
-}
-
 export interface AboutItem {
+  emoji: string;
   label: string;
   text: string;
-  Icon?: ForwardRefExoticComponent<Omit<SVGProps<SVGSVGElement>, 'ref'>>;
 }
 
 /**
- * Stat section
+ * "What I'm doing" service cards
  */
-export interface Stat {
+export interface Service {
+  emoji: string;
   title: string;
-  value: number;
-  Icon?: ForwardRefExoticComponent<Omit<SVGProps<SVGSVGElement>, 'ref'>>;
+  description: string;
 }
 
 /**
- * Skills section
+ * Skills
  */
-
 export interface Skill {
   name: string;
   level: number;
@@ -73,53 +52,36 @@ export interface SkillGroup {
 }
 
 /**
- * Resume section
+ * Education / experience timeline
  */
 export interface TimelineItem {
   date: string;
   location: string;
   title: string;
-  content: JSX.Element;
+  content: string;
 }
 
 /**
- * Contact section
+ * Contact list (sidebar + contact tab)
  */
+export interface ContactItem {
+  emoji: string;
+  label: string;
+  text: string;
+  href?: string;
+}
+
 export interface ContactSection {
   headerText?: string;
   description: string;
   items: ContactItem[];
 }
 
-export const ContactType = {
-  Email: 'Email',
-  Phone: 'Phone',
-  Location: 'Location',
-  Github: 'Github',
-  LinkedIn: 'LinkedIn',
-  Facebook: 'Facebook',
-  Twitter: 'Twitter',
-  Instagram: 'Instagram',
-} as const;
-
-export type ContactType = (typeof ContactType)[keyof typeof ContactType];
-
-export interface ContactItem {
-  type: ContactType;
-  text: string;
-  href?: string;
-}
-
-export interface ContactValue {
-  Icon: FC<IconProps> | ForwardRefExoticComponent<Omit<SVGProps<SVGSVGElement>, 'ref'>>;
-  srLabel: string;
-}
-
 /**
- * Social items
+ * Social links
  */
 export interface Social {
   label: string;
-  Icon: FC<IconProps>;
+  emoji: string;
   href: string;
 }
