@@ -193,6 +193,6 @@ export const contact: ContactSection = {
 export const socialLinks: Social[] = [
   {label: 'GitHub', emoji: '🐙', href: 'https://github.com/nahid-islam'},
   {label: 'LinkedIn', emoji: '💼', href: 'https://www.linkedin.com/in/nahid-islam/'},
-  {label: 'Stack Overflow', emoji: '📚', href: 'https://stackoverflow.com/users/'},
+  {label: 'Medium', emoji: '✍️', href: 'https://medium.com/@nahidshrnv'},
   {label: 'Email', emoji: '📧', href: 'mailto:nahid.islam.qa@example.com'},
 ];
